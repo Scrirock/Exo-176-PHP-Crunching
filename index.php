@@ -286,7 +286,7 @@
                 foreach ($imPrice as $label => $price) {
                     if ($label === "label"){
                         if ($i < 10) $lowPriceArray[] = (float)str_replace("$", "", $price);
-                        elseif ($price < max($lowPriceArray)) {
+                        elseif ((float)str_replace("$", "", $price) < (float)max($lowPriceArray)) {
                             $maxPrice = max($lowPriceArray);
                             unset($lowPriceArray[array_search($maxPrice, $lowPriceArray)]);
                             $lowPriceArray[$values["im:name"]["label"]] = (float)str_replace("$", "", $price);
